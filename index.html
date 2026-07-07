@@ -143,6 +143,17 @@ function applySmythDeployPatches() {
       applyLang(lang);
     });
   }
+
+  var footer = document.querySelector('footer');
+  if (footer && !document.getElementById('yalabo-credit')) {
+    var credit = document.createElement('div');
+    credit.id = 'yalabo-credit';
+    credit.style.marginTop = '10px';
+    credit.style.fontSize = '12px';
+    credit.style.color = 'oklch(60% 0.02 150)';
+    credit.innerHTML = 'Built by <a href="https://yalabo.ca" target="_blank" rel="noopener noreferrer" style="color:oklch(80% 0.06 155);font-weight:600;text-decoration:none;">Yalabo Web Dev</a>';
+    footer.appendChild(credit);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', async function() {
